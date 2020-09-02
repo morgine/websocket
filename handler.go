@@ -23,3 +23,7 @@ func Use(handler ...Handler) Router {
 func NotFound(ctx *Context) {
 	ctx.SendData([]byte("route not found"))
 }
+
+func NotFoundHandler() Handler {
+	return HandlerFunc(NotFound)
+}
